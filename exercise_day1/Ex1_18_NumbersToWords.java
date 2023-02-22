@@ -1,10 +1,15 @@
 package exercise_day1;
 
+import java.util.Scanner;
+
 public class Ex1_18_NumbersToWords {
 	public static void main(String[] args) {
 		String arr[]= {"zero","one","two","three","four","five","six","seven","eight","nine"};
-		int n=949485;
-		String s=String.valueOf(n);
+		System.out.println("Enter any number...");
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		String s=String.valueOf(num);
+		System.out.println("the converted number to words is...  ");
 		for(int i=0;i<s.length();i++)
 		{
 			char c=s.charAt(i);
@@ -20,5 +25,4 @@ public class Ex1_18_NumbersToWords {
 			if(c=='9') System.out.print(arr[9]+" ");
 		}
 	}
-
 }

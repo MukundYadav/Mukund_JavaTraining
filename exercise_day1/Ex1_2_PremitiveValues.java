@@ -11,7 +11,6 @@ public class Ex1_2_PremitiveValues {
 	static char c;
 	 
 	public static void main(String[] args) {
-		
 		System.out.println("default value of byte is : "+b);
 		System.out.println("default value of short is : "+s);
 		System.out.println("default value of int is : "+i);
@@ -20,8 +19,5 @@ public class Ex1_2_PremitiveValues {
 		System.out.println("default value of double is : "+d);
 		System.out.println("default value of boolean is : "+bool);
 		System.out.println("default value of char is : "+ c);
-		
-		
 	}
-	
 }

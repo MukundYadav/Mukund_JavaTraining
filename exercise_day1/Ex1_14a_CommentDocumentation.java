@@ -10,19 +10,18 @@ public class Ex1_14a_CommentDocumentation {
 	 * @param args is the argument we have used
 	 */
    public static void main(String[] args) {
-	int k=10;
-	System.out.println(Average(k));
+	   int k=10;
+	   System.out.println(getAverage(k));
 	
-}  
- /*here we are defining the function for Average
-  * @param n we have used
-  */
-public static double Average(int n){
-	
-	int sum=0;
-	for(int i=1;i<=n;i++) {
-		sum+=i;
-	}
-	double avg=sum/(double)n;
-	return avg;}
+   }  
+   /*here we are defining the function for Average
+   * @param n we have used
+   */
+   public static double getAverage(int n){
+	   int sum=0;
+	   for(int i=1;i<=n;i++) {
+		   sum+=i;
+   }
+   double avg=sum/(double)n;
+   return avg;}
 }

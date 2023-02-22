@@ -10,19 +10,17 @@ public class Ex1_13_StudentResult {
 		for(int i=0;i<n;i++) {
 			System.out.println("enter the marks of student "+(i+1));
 			for(int j=0;j<n;j++) {
-			
-			arr[i][j]=sc.nextInt();
+				arr[i][j]=sc.nextInt();
 			}
 		}
 		//to print the marks
-				for(int i=0;i<n;i++) {
-					for(int j=0;j<n;j++) {
-						System.out.print(arr[i][j]+" ");
-					}
-					System.out.println();
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n;j++) {
+				System.out.print(arr[i][j]+" ");
 				}
-		//to calculate the result
-		
+			System.out.println();
+		}
+		//to calculate the result	
 		for(int i=0;i<arr.length;i++) {
 			int result=0;
 			for(int j=0;j<arr[i].length;j++) {
@@ -30,11 +28,5 @@ public class Ex1_13_StudentResult {
 			}
 			System.out.println("result of student "+(i+1)+" is "+result);
 		}
-		
-		
-		
-		
-		
 	}
-
 }

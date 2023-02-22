@@ -27,18 +27,15 @@ public class Ex1_day3_2 {
 		System.out.println("Cuboid's  surface area is : "+cu.surfaceArea());
 		System.out.println("Cuboid's  volume is : "+cu.volume());
 	}
-
 }
 interface Area{
 	double area();
 	double peri();
-	
 }
 interface volume{
 	double surfaceArea();
 	double volume();
 }
-
 class Circle implements Area{
 	double r;
 	final double pi=Math.PI;

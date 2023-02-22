@@ -5,5 +5,4 @@ public class Ex1_14c_3_WithoutFunctionParam {
 		System.out.println("without function parameters");
 		//it will not run
 	}
-
 }

@@ -14,8 +14,5 @@ public class Ex1_5_Average {
 		CalcAverage(3);
 		CalcAverage(4);
 		CalcAverage(10);
-		
 	}
-	
-
 }

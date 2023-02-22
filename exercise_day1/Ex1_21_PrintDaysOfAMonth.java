@@ -15,14 +15,12 @@ public class Ex1_21_PrintDaysOfAMonth {
 			{
 				System.out.println("29 days therefore leap year");
 				break;
-				} 
+			} 
 			else if(n%4==0)
 			{
 				System.out.println("29 days therefore leap year");
 				break;
-				}
-				
-			
+			}
 		    else {System.out.println("28 days in Feb therefore not a leap year"); break;}
 		}
 		case "march": System.out.println("31 days in march"); break;
@@ -37,7 +35,7 @@ public class Ex1_21_PrintDaysOfAMonth {
 		case "dec": System.out.println("31 days in december"); break;
 		}
 		scanner.close();
-		}
 	}
+}
 
 

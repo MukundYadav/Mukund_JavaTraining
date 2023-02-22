@@ -10,7 +10,6 @@ public class Ex1_16_SearchElementAndCount {
 		int n=sc.nextInt();
 		int count=0;
 		for(int i=0;i<arr.length;i++) {
-			
 			if(arr[i]==n)
 			{
 				count++;
@@ -23,5 +22,4 @@ public class Ex1_16_SearchElementAndCount {
 		sc.close();
 		System.out.println("the count is "+count);
 	}
-
 }

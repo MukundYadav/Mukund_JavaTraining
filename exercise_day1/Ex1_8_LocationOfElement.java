@@ -7,10 +7,9 @@ public class Ex1_8_LocationOfElement {
 		int element=7;
 		for(int i=0;i<arr.length;i++) {
 			if (arr[i]==element) {
-		
 		System.out.println("index of "+element+ " in the array is: "+i);
 		}
 	}
-
-	}
-}
+  }
+}		
+			

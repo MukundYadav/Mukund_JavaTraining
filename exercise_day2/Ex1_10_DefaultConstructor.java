@@ -1,21 +1,20 @@
 package exercise_day2;
 
 public class Ex1_10_DefaultConstructor {
- public static void main(String[] args) {
-	C obj=new C();
-}
-}
-class A{
-	A(){
-		System.out.println("in class A");
+	public static void main(String[] args) {
+		ThirdClass obj=new ThirdClass();
 	}
 }
-class B{
-	B(){
+class FirstClass{
+	FirstClass(){
+		System.out.println("in class FirstClass");
+	}
+}
+class SecondClass{
+	SecondClass(){
 		System.out.println("in class B");
 	}
 }
-class C extends A{
-	
-	B object=new B();
+class ThirdClass extends FirstClass{
+	SecondClass object=new SecondClass();
 }

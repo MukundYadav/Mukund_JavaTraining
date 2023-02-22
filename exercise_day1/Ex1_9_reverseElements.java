@@ -1,6 +1,6 @@
 package exercise_day1;
 
-public class Ex1_9_reverseElements {
+public class Ex1_9_ReverseElements {
 	public static void main(String[] args) {
 		int arr[]= {1,2,3,4,5,6};
 		int n=arr.length;
@@ -16,14 +16,10 @@ public class Ex1_9_reverseElements {
 		end--;
 		
 		}
-		
-		
-	
 		System.out.println("reverse order is: ");
 		for(int i=0;i<n;i++)
 		{
 			System.out.print(arr[i]+ " ");
 		}
-
-}
+    }
 }

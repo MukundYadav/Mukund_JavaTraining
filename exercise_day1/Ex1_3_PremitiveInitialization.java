@@ -3,12 +3,10 @@ package exercise_day1;
 public class Ex1_3_PremitiveInitialization {
 	public static void main(String[] args) {
 		byte b=2;
-		//short s=4;
 		int i=3;
 		long l=100;
 		float f=10.0f;
-		//double d=7;
-		
+		//for type conversion
 		short a=(short)b;
 		float k=(float)i;
 		int z=(int)f;
@@ -18,7 +16,5 @@ public class Ex1_3_PremitiveInitialization {
 		System.out.println(k);
 		System.out.println(z);
 		System.out.println(x);
-	}
-	
-
+	}	
 }
