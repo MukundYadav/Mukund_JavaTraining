@@ -1,0 +1,35 @@
+package exercise2_day4;
+
+public class Ex2_day4_3 {
+	public void mth1() {
+		mth2();
+		System.out.println("caller");
+	}
+	public void mth2() {
+		try
+			{
+			  	//throw new Exception();
+				System.exit(0);
+			}
+		catch(Exception e) {System.out.println("catch-mth2");
+		}
+		finally {
+			  System.out.println("finally-mth2");
+		}
+	}
+	public static void main(String [] args) {
+		Ex2_day4_2 s=new Ex2_day4_2();
+			s.mth1();
+	}
+}
+
+
+
+/* OUTPUT
+ * 
+ * catch-mth2
+   finally-mth2
+   caller
+ * 
+ * 
+ */
