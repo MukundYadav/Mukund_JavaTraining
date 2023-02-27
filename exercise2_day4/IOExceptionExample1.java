@@ -6,21 +6,21 @@ import java.io.IOException;
 
 public class IOExceptionExample1 {
 	public static void main(String[] args) {
-		IOExceptionClass a=new IOExceptionClass();
-		a.TheMethod();
+		IOExceptionClass file=new IOExceptionClass();
+		file.readFile();
 	}
    
 
 }
 class IOExceptionClass{
-	public static void TheMethod() throws IOException{
+	public static void readFile() throws IOException{
 		FileReader file = null ;
 		try {
 			file = new FileReader("test.txt");
 		} catch (FileNotFoundException e) {
 		}
 		file.close();
-		System.out.println("ok it's done");
+		System.out.println("the file is closed and it's going to throw an exception");
 	}
 }
 

@@ -7,15 +7,16 @@ public class NumberExceptinExample4 {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		try {
-			if(n<10)
+			if(n<10) {
 				throw new NumberException("The number is less than 10!");
-			else
+			}
+			else {
 				System.out.println("Good number, I'm soo happy!");
-		}catch(NumberException e) {
+			}
+		} catch (NumberException e) {
 			System.out.println(e);
 			System.out.println();
 			System.out.println("you have entered very small number !.");
-			
 		}
 	}
 }

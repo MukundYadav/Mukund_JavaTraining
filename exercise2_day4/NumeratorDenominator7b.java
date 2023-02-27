@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class NumeratorDenominator7b {
 	public static void main(String[] args) throws Exception {
 		Scanner sc=new Scanner(System.in);
-		int result=0;
+		int result = 0;
 		while(true) {
 			System.out.println("enter the numerator and divisor: ");
-			String numerator=sc.next();
-			int divisor=sc.nextInt();
-		    if(numerator.startsWith("q") || numerator.startsWith("Q")) {
+			String numerator = sc.next();
+			int divisor = sc.nextInt();
+		    if( numerator.startsWith("q") || numerator.startsWith("Q")) {
 		    	System.out.println("Quitting...");
 		    	break;
 		    }
 			try {
-			result=Integer.parseInt(numerator)/ divisor;
+			result = Integer.parseInt(numerator) / divisor;
 			System.out.println("the result is : "+result);
 			
 			}
