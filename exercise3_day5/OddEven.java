@@ -9,22 +9,28 @@ public class OddEven {
 		es.execute(() -> {
 			even();
 		});
+		
 		es.execute(() -> {
 			odd();
 		});
 		es.shutdown();
 	}
 
-	synchronized public static void even() {
+	 synchronized public static void even() {
 		System.out.println("The Even numbers are...");
 		for (int i = 0; i <= 100; i++) {
 			if (i % 2 == 0) {
 				System.out.println(i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					System.out.println("The thread is interrupted...");
+				}
 			}
 		}
 	}
 
-	synchronized public static void odd() {
+	 synchronized public static void odd() {
 		System.out.println("Odd numbers are....");
 		for (int i = 0; i <= 100; i++) {
 			if (i % 2 != 0) {

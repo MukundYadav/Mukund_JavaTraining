@@ -29,6 +29,7 @@ class ProducerConsumer {
 			try {
 				wait();
 			} catch (Exception e) {
+				System.out.println("the exception occured....");
 			}
 		}
 		System.out.println("The product is produced....");
@@ -41,6 +42,7 @@ class ProducerConsumer {
 			try {
 				wait();
 			} catch (Exception e) {
+				System.out.println("the exception occured....");
 			}
 		}
 		System.out.println("The product is consumed....");

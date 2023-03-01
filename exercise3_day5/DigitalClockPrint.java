@@ -62,6 +62,7 @@ class DigitalClock {
 		try {
 			wait();
 		} catch (InterruptedException e) {
+			System.out.println("The thread is interrupted...");
 		}
 	}
 
@@ -76,9 +77,9 @@ class DigitalClock {
 			try {
 				wait();
 			} catch (InterruptedException e) {
+				System.out.println("the thread is interrupted...");
 			}
 		}
-
 	}
 
 	synchronized public void getHours() {
@@ -93,8 +94,8 @@ class DigitalClock {
 			try {
 				wait();
 			} catch (InterruptedException e) {
+				System.out.println("the thread is interrupted...");
 			}
 		}
-
 	}
 }

@@ -3,11 +3,11 @@ package exercise3_day5;
 public class StringBufferExample {
 	public static void main(String[] args) {
 
-		StringBuffer strbfr = new StringBuffer("AA");
+		StringBuffer stringbfr = new StringBuffer("A");
 
-		ThreadClass1 obj1 = new ThreadClass1(strbfr);
-		ThreadClass1 obj2 = new ThreadClass1(strbfr);
-		ThreadClass1 obj3 = new ThreadClass1(strbfr);
+		ThreadClass1 obj1 = new ThreadClass1(stringbfr);
+		ThreadClass1 obj2 = new ThreadClass1(stringbfr);
+		ThreadClass1 obj3 = new ThreadClass1(stringbfr);
 
 		obj1.start();
 		obj2.start();
@@ -18,30 +18,24 @@ public class StringBufferExample {
 class ThreadClass1 extends Thread {
 	StringBuffer strbfr;
 
-	ThreadClass1(StringBuffer strbfr) {
-		this.strbfr = strbfr;
+	ThreadClass1(StringBuffer stringbfr) {
+		strbfr = stringbfr;
 	}
 
 	@Override
 	public void run() {
 		synchronized (strbfr) {
-			for (int i = 0; i < 100; i++) {
+			for (int i = 1; i <=100; i++) {
 				System.out.print(strbfr);
-
 			}
-			strbfr.setCharAt(0, 'B');
 			System.out.println();
-			for (int j = 0; j < 100; j++) {
-				System.out.print(strbfr);
-
-			}
-			strbfr.setCharAt(0, 'C');
-			System.out.println();
-			for (int i = 0; i < 100; i++) {
-				System.out.print(strbfr);
-			}
+			char c=strbfr.charAt(0);
+			c++;
+			String local=Character.toString(c);
+			strbfr.replace(0, 1, local);
 		}
 
 	}
 
 }
+
