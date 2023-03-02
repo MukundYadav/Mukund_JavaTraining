@@ -1,45 +1,47 @@
 package exercise4_patterns;
 
-public class StrategyPattern{
+public class StrategyPattern {
 	public static void main(String[] args) {
-		PaintingBrush pb=new PaintingBrush();
-		pb.paint=new BluePaint();
-		pb.doThePaint();
+		PaintingBrush paintbrush = new PaintingBrush();
+		paintbrush.paint = new BluePaint();
+		paintbrush.doPaint();
 	}
 }
 
-class PaintingBrush{
-	Paintt paint;
-	public void doThePaint(){
+class PaintingBrush {
+	Paint paint;
+
+	public void doPaint() {
 		paint.colour();
 	}
 }
-abstract class Paintt{
+
+abstract class Paint {
 	public abstract void colour();
 }
-class GrayPaint extends Paintt{
+
+class GrayPaint extends Paint {
 
 	@Override
 	public void colour() {
 		System.out.println("the red colour paint brush...");
-		
+
 	}
-	
 }
-class BluePaint extends Paintt{
+
+class BluePaint extends Paint {
 
 	@Override
 	public void colour() {
 		System.out.println("the Blue colour paint brush...");
-		
+
 	}
-	
 }
-class GreenPqint extends Paintt{
+
+class GreenPqint extends Paint {
 
 	@Override
 	public void colour() {
 		System.out.println("the green colour Paint brush...");
 	}
-	
 }
