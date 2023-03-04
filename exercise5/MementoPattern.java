@@ -1,67 +1,95 @@
 package exercise5;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MementoPattern {
 	public static void main(String[] args) {
-		Originator originator = new Originator();
-		Caretaker caretaker = new Caretaker();
+		// setting up the username and password
+		User user = new User("username", "password");
 
-		originator.setState("State 1");
-		caretaker.addMemento(originator.createMemento());
-		originator.setState("State 2");
-		caretaker.addMemento(originator.createMemento());
-		originator.setState("State 3");
-		originator.restoreFromMemento(caretaker.getMemento(1));
-		System.out.println(originator.getState()); 
+		// add user to LoginManager
+		LoginManager loginManager = new LoginManager(user);
+
+		// Attempt to log in with the incorrect password
+		loginManager.login("username", "pass");
+
+		// Attempt to log in again with the correct password
+		loginManager.restore();
+		loginManager.login("username", "password");
 	}
 }
 
-class Memento {
-	private String state;
+class User {
+	private String username;
+	private String password;
 
-	public Memento(String state) {
-		this.state = state;
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
 	}
 
-	public String getState() {
-		return state;
+	// The login method to manage login activity
+	public boolean login(String username, String password) {
+		if (this.username.equals(username) && this.password.equals(password)) {
+			System.out.println("Login successful.");
+			return true;
+		} else {
+			System.out.println("Login failed.");
+			System.out.println("Please Login Again..");
+			return false;
+		}
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	// saving current state
+	public LoginMemento save() {
+		return new LoginMemento(username, password);
 	}
-}
-
-class Originator {
-	private String state;
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public Memento createMemento() {
-		return new Memento(state);
-	}
-
-	public void restoreFromMemento(Memento memento) {
-		this.state = memento.getState();
+	//restoring...
+	public void restore(LoginMemento memento) {
+		this.username = memento.getUsername();
+		this.password = memento.getPassword();
 	}
 }
 
-class Caretaker {
-	private List<Memento> mementoList = new ArrayList<>();
+// The LoginManager class manages the login process and the state of the User object
+class LoginManager {
+	private User user;
+	private LoginMemento memento;
 
-	public void addMemento(Memento memento) {
-		mementoList.add(memento);
+	public LoginManager(User user) {
+		this.user = user;
+	}
+	//login activity
+	public boolean login(String username, String password) {
+		boolean success = user.login(username, password);
+		if (!success) {
+			memento = user.save();
+		}
+		return success;
 	}
 
-	public Memento getMemento(int index) {
-		return mementoList.get(index);
+	// The restore method restores the state of the User 
+	public void restore() {
+		if (memento != null) {
+			user.restore(memento);
+			memento = null;
+		}
+	}
+}
+
+// The LoginMemento class 
+class LoginMemento {
+	private String username;
+	private String password;
+
+	public LoginMemento(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public String getPassword() {
+		return password;
 	}
 }
